@@ -1,0 +1,21 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+
+services:
+  - mysql
+
+before_script:
+  - cp .env.travis .env
+  - mysql -u root -e 'create database larablogtest;'
+  - composer self-update
+  - composer install --dev --prefer-source --no-interaction
+  - php artisan key:generate
+  - php artisan vendor:publish --tag=laravelroles
+  - php artisan migrate
+  - composer dump-autoload
+  - php artisan db:seed
+  - sudo chgrp -R www-data storage bootstrap/cache
+  - sudo chmod -R ug+rwx storage bootstrap/cache
