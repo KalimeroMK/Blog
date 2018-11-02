@@ -55,7 +55,7 @@ return [
     ],
 
     'footer' => [
-        'copyright' => '&copy; Lara(b)log 2018 | An <a href="https://github.com/jeremykenedy/larablog" target="_blank" class="text-success">opensource</a> blog platform<br /> Developed by <i class="fa fa-heart text-danger"></i> by <a href="https://github.com/jeremykenedy" class="text-muted" target="_blank">Zoran Shefot Bogoevski</a>',
+        'copyright' => '&copy; KalimeroCMS 2018 | An <a href="https://github.com/KalimeroMK/Blog" target="_blank" class="text-success">opensource</a> blog platform<br /> Developed by <i class="fa fa-heart text-danger"></i> by <a href="https://github.com/KalimeroMK" class="text-muted" target="_blank">Zoran Shefot Bogoevski</a>',
     ],
 
     'contact' => [

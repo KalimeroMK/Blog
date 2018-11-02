@@ -21,7 +21,6 @@ class HomePageController extends Controller
         $tag = tag::all();
         $categories = Category::roots()->get();
         $tree = Category::getTreeHP($categories);
-//        $allcategories = DB::table('posts')->join('categories', 'post.category', '=', 'categories.id')->groupBy('categories.id')->take(8)->get();
         $data = ["status" => "success", "post" => $post, "categories" => $categories, "tree" => $tree, "tag" => $tag];
         return view('main.homepage')->with($data);
     }
@@ -36,7 +35,9 @@ class HomePageController extends Controller
      */
     public function post($slug)
     {
+
         $post = Post::where('slug', '=', $slug)->first();
+        Post::where('slug', $slug)->update(['views' => $post->views + 1]);
         $sliders = Sliders::where('post_id', '=', $post->id)->get();
         $allcategories = Category::get();
         $categories = Category::roots()->get();

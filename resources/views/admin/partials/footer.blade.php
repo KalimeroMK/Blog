@@ -4,7 +4,7 @@
             <nav class="footer-nav">
                 <ul>
                     <li>
-                        <a href="https://github.com/jeremykenedy/larablog" target="_blank">
+                        <a href="https://github.com/KalimeroMK/Blog" target="_blank">
                             {!! trans('admin.footer.nav.github') !!}
                         </a>
                     </li>
@@ -15,11 +15,11 @@
                     </li>
                 </ul>
             </nav>
-          <div class="credits ml-auto">
+            <div class="credits ml-auto">
             <span class="copyright">
                 {!! trans('admin.footer.copyright') !!}
             </span>
-          </div>
+            </div>
         </div>
     </div>
 </footer>

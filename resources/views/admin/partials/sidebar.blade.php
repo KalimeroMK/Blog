@@ -2,8 +2,8 @@
 <div class="sidebar" data-color="white" data-active-color="danger">
 
     <div class="logo text-center">
-        <a href="/" class="simple-text logo-normal">
-          Lara(b)log2
+        <a href="/admin" class="simple-text logo-normal">
+            KalimeroCMS
         </a>
     </div>
 
