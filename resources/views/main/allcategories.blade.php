@@ -16,7 +16,7 @@
                                         <div class="image-box shadow bordered text-center mb-20">
                                             <div class="overlay-container">
                                                 <div class="img-container">
-                                                    <img src="/assets/img/categories/medium/{{ $category->image }}"
+                                                    <img src="/images/categories/medium/{{ $category->image }}"
                                                          alt="{{ $category->name }}">
                                                 </div>
                                                 <div class="overlay-top">

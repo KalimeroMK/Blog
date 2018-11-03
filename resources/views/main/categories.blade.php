@@ -12,8 +12,8 @@
                 <div class="row">
                     <!-- page-title start -->
                     <!-- ================ -->
-                    <h1>{{ $category->name }}</h1>
-                    {!! $category->description !!}
+                 {{--    <h1>{{ $category->name }}</h1>
+                    {!! $category->description !!} --}}
                     <!-- page-title end -->
 
                     @foreach($category->getImmediateDescendants() as $descendant)
@@ -48,22 +48,18 @@
                             <!-- masonry grid start -->
                             <!-- ================ -->
                                 <div class="col-12">
-
+<div class="row">
                                     @foreach($post as $posts)
                                     <!-- masonry grid item start -->
                                     <!-- blogpost start -->
-                                    <div class="col-4>
-                                    <img src="{{ $posts->post_image }}" alt="{{ $posts->title }}">
-                                    <a class="overlay-link" href="/posts/{{ $posts->slug }}"><i
-                                        class="fa fa-link"></i></a>
+                                    <div class="col-4">
+                                    <a class="overlay-link" href="/posts/{{ $posts->slug }}"><img src="{{$posts->post_image}}" alt="{{$posts->title}}"></a>
                                     </div>
                                     <div class="col-8">
-                                        <header>
                                             <h2><a href="/posts/{{ $posts->slug }}">{{ $posts->title }}</a></h2>
 
-                                        </header>
                                         <div class="blogpost-content">
-                                            <p>{!! strip_tags(str_limit($posts->description,100,'...')) !!}</p>
+                                            <p>{!! strip_tags(str_limit($posts->content_raw,400,'...')) !!}</p>
                                         </div>
                                         <footer class="clearfix">
 
@@ -74,6 +70,7 @@
                                     </div>
                                     @endforeach
 
+                        {{ $post->links() }}
 
                                 </div>
                             </div>

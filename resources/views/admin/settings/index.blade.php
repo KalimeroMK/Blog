@@ -98,7 +98,7 @@
                     <div class="media">
 
                         @foreach($settings as $setting)
-                            <img src="/img/logo/{{ $setting->logo }}" class="img-responsive"/>
+                            <img src="/images/logo/{{ $setting->logo }}" class="img-responsive"/>
                         @endforeach
                     </div>
 

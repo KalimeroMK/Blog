@@ -23,7 +23,7 @@
         </div><!-- bg-191 -->
 
         <div class="container">
-            <a class="logo" href="index.html"><img src="images/logo-black.png" alt="Logo"></a>
+            <a class="logo" href="/"><img src="images/logo-black.png" alt="Logo"></a>
 
             <a class="right-area src-btn" href="#" >
                 <i class="active src-icn ion-search"></i>
