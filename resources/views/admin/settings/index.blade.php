@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+@section('header_title')
+    {{ trans('admin.posts.pages.index.header') }}
+@endsection
 @section('content')
     <div class="col-lg-10">
         <div class="row">
@@ -156,34 +159,7 @@
             </div>
         </div> <!-- /# card4 -->
 
-        <style>
-            #map {
-                height: 400px;
-                width: 100%;
-            }
-        </style>
 
-        <div id="map"></div>
-        <script>
-            @foreach($settings as $setting)
-            function initMap() {
-                var uluru = {lat: {{ $setting->lat }}, lng: {{ $setting->lng }} };
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 4,
-                    center: uluru
-                });
-                var marker = new google.maps.Marker({
-                    position: uluru,
-                    map: map
-                });
-            }
-            @endforeach
-
-        </script>
-
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA75bnzyJ_5j2Ger9Erjo1Q-0XucnZbst4&callback=initMap">
-        </script>
 
         <div class="row">
             <div class="col-lg-6">

@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+@section('header_title')
+    {{ trans('admin.posts.pages.index.header') }}
+@endsection
 @section('content')
     <div class="col-lg-10">
         <div class="row">

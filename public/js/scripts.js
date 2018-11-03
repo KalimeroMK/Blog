@@ -230,7 +230,7 @@ function isExists(elem){
 	}
 	return false;
 }
-jQuery(".dropdown a").click(function() {
-   // return false;
-   window.location.href = jQuery(this).attr('href')
-});
+// jQuery(".dropdown a").click(function() {
+//    // return false;
+//    window.location.href = jQuery(this).attr('href')
+// });

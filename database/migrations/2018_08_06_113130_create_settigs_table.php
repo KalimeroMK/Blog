@@ -10,10 +10,8 @@ class CreateSettigsTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::create('settigs', function(Blueprint $table)
-		{
+	public function up() {
+		Schema::create('settings', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('title');
 			$table->string('mainurl');
@@ -34,21 +32,17 @@ class CreateSettigsTable extends Migration {
 			$table->string('flickr');
 			$table->string('pinterest');
 			$table->integer('user_id')->unsigned()->index('settigs_user_id_foreign');
-			$table->float('lat', 20, 10);
-			$table->float('lng', 20, 10);
 			$table->timestamps();
 		});
 	}
-
 
 	/**
 	 * Reverse the migrations.
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
-		Schema::drop('settigs');
+	public function down() {
+		Schema::drop('settings');
 	}
 
 }

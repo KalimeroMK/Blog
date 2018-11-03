@@ -37,50 +37,51 @@
                     <div class="col-8">
 
 
-                        <img src="{{$post->post_image}}" alt="{{$post->title}}">
-                        {{--@if( !empty($post->$sliders->imagethumb))--}}
-                        {{--@else--}}
-                        {{--<div class="slider noMarginBottom">--}}
-                        {{--<div id="myCarousel" class="carousel slide" data-ride="carousel">--}}
-                        {{--<!-- Indicators -->--}}
-                        {{--<ol class="carousel-indicators">--}}
-                        {{--@foreach($sliders as $key => $slider)--}}
-                        {{--<li data-target="#myCarousel" data-slide-to="{{ $key }}"--}}
-                        {{--@if ($key == 0) class="active" @else @endif ></li>--}}
-                        {{--@endforeach--}}
-                        {{--</ol>--}}
+                        @if( empty($slider['user_id']))
+                            <img src="{{$post->post_image}}" alt="{{$post->title}}">
 
-                        {{--<!-- Wrapper for slides -->--}}
-                        {{--<div class="carousel-inner">--}}
-                        {{--@foreach($sliders as $key => $slider)--}}
+                        @else
+                            <div class="slider noMarginBottom">
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        @foreach($sliders as $key => $slider)
+                                            <li data-target="#myCarousel" data-slide-to="{{ $key }}"
+                                                @if ($key == 0) class="active" @else @endif ></li>
+                                        @endforeach
+                                    </ol>
 
-                        {{--<div class="item {{ $key == 0 ? 'active' : '' }}">--}}
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        @foreach($sliders as $key => $slider)
 
-                        {{--<img src="/images/sliders/{{$slider->imagethumb}}" alt="image"--}}
-                        {{--class="img-responsive">--}}
-                        {{--</div>--}}
-                        {{--@endforeach--}}
+                                            <div class="item {{ $key == 0 ? 'active' : '' }}">
 
-                        {{--</div>--}}
-                        {{--<!-- Left and right controls -->--}}
-                        {{--<a class="left carousel-control" href="#myCarousel" data-slide="prev">--}}
-                        {{--<span class="glyphicon glyphicon-chevron-left"></span>--}}
-                        {{--<span class="sr-only">Previous</span>--}}
-                        {{--</a>--}}
-                        {{--<a class="right carousel-control" href="#myCarousel" data-slide="next">--}}
-                        {{--<span class="glyphicon glyphicon-chevron-right"></span>--}}
-                        {{--<span class="sr-only">Next</span>--}}
-                        {{--</a>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<h3 class="mt-30"><b>{{$post->title}}</b></h3>--}}
-                        {{--<ul class="list-li-mr-20 mtb-15">--}}
-                        {{--<li>by <a href="#"><b>Olivia Capzallo </b></a> Jan 25, 2018</li>--}}
-                        {{--<li><i class="color-primary mr-5 font-12 ion-ios-bolt"></i>30,190</li>--}}
-                        {{--<li><i class="color-primary mr-5 font-12 ion-chatbubbles"></i>30</li>--}}
-                        {{--</ul>--}}
+                                                <img src="/images/sliders/{{$slider->imagethumb}}" alt="image"
+                                                     class="img-responsive">
+                                            </div>
+                                        @endforeach
 
-                        {{--@endif--}}
+                                    </div>
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="mt-30"><b>{{$post->title}}</b></h3>
+                            <ul class="list-li-mr-20 mtb-15">
+                                <li>by <a href="#"><b>Olivia Capzallo </b></a> Jan 25, 2018</li>
+                                <li><i class="color-primary mr-5 font-12 ion-ios-bolt"></i>30,190</li>
+                                <li><i class="color-primary mr-5 font-12 ion-chatbubbles"></i>30</li>
+                            </ul>
+
+                        @endif
 
                         <p class="mtb-15">{!!$post->content_raw!!}</p>
 

@@ -20,7 +20,7 @@ class Sliders extends Model
         return $this->belongsTo('App\Models\Category', 'category_id');
     }
 
-    public function product()
+    public function post()
     {
         return $this->belongsTo('App\Models\Post', 'post_id');
     }
