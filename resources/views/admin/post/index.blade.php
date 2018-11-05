@@ -23,15 +23,15 @@
                            data-placement="left" title="{!! trans('tooltips.post.create') !!}">
                             <i class="nc-icon nc-simple-add" aria-hidden="true"></i>
                             <span class="hidden-xs">
-                            {{ trans('admin.buttons.create') }}
-                        </span>
+                        {{ trans('admin.buttons.create') }}
+                    </span>
                         </a>
                         <h4 class="card-title">
                             {{ trans('admin.posts.table.title') }}
                         </h4>
                         <span class="badge badge-pill badge-primary">
-                        {!! trans('admin.posts.pages.index.badge', ['per' => $posts->perPage(), 'total' => $posts->total()]) !!}
-                    </span>
+                    {!! trans('admin.posts.pages.index.badge', ['per' => $posts->perPage(), 'total' => $posts->total()]) !!}
+                </span>
                     </div>
 
                     <hr>
@@ -82,8 +82,8 @@
                                                 }
                                             @endphp
                                             <span class="badge badge-pill badge-{{ $statusBadge }}">
-                                                {{ $status }}
-                                            </span>
+                                        {{ $status }}
+                                    </span>
                                             <br/>
                                             {{ $post->published_at->format('M-j-y g:ia') }}
                                         </td>
@@ -98,14 +98,14 @@
                                                 : {{ $post->images()->count() }}</span></td>
 
                                         <td>
-                                        <!-- <a href="{{ url('/admin/authors/' . $post->author) }}" > -->
-                                        {{ $post->author }}
-                                        <!-- </a> -->
+                                            @foreach ($users as $user)
+                                                {{ $user->name }}
+                                            @endforeach
                                         </td>
                                         <td>
-                                        <span class="badge badge-light badge-pill">
-                                                {!! join('</span> <span class="badge badge-light badge-pill">', $post->tagLinks()) !!}
-                                            </span>
+                                <span class="badge badge-light badge-pill">
+                                {!! join('</span> <span class="badge badge-light badge-pill">', $post->tagLinks()) !!}
+                                </span>
                                         </td>
                                         <td>
                                             <a href="/admin/posts/{{ $post->id }}/edit"
@@ -113,8 +113,8 @@
                                                data-placement="top" title="{!! trans('tooltips.post.edit') !!}">
                                                 <i class="fa fa-edit fa-fw"></i>
                                                 <span class="hidden-xs hidden-sm hidden-md">
-                                                    {{ trans('admin.buttons.edit') }}
-                                                </span>
+                                    {{ trans('admin.buttons.edit') }}
+                                </span>
                                             </a>
                                         </td>
                                         <td>
@@ -123,23 +123,23 @@
                                                title="{!! trans('tooltips.post.view') !!}">
                                                 <i class="fa fa-eye fa-fw"></i>
                                                 <span class="hidden-xs hidden-sm hidden-md">
-                                                    {{ trans('admin.buttons.view') }}
-                                                </span>
+                                {{ trans('admin.buttons.view') }}
+                            </span>
                                             </a>
                                         </td>
                                         <td>
-                                            <span data-toggle="tooltip" data-placement="top"
-                                                  title="{!! trans('tooltips.post.delete') !!}">
-                                                <button type="button"
-                                                        class="btn btn-danger btn-sm btn-block delete-post-trigger"
-                                                        data-toggle="modal" data-target="#modal_delete"
-                                                        data-postid="{{ $post->id }}">
-                                                    <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i>
-                                                    <span class="hidden-xs hidden-sm hidden-md">
-                                                        {{ trans('admin.buttons.delete') }}
-                                                    </span>
-                                                </button>
-                                            </span>
+                        <span data-toggle="tooltip" data-placement="top"
+                              title="{!! trans('tooltips.post.delete') !!}">
+                        <button type="button"
+                                class="btn btn-danger btn-sm btn-block delete-post-trigger"
+                                data-toggle="modal" data-target="#modal_delete"
+                                data-postid="{{ $post->id }}">
+                        <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i>
+                        <span class="hidden-xs hidden-sm hidden-md">
+                            {{ trans('admin.buttons.delete') }}
+                        </span>
+                    </button>
+                </span>
                                         </td>
                                     </tr>
                                 @endforeach

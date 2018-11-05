@@ -21,8 +21,9 @@ class CreatePostsTable extends Migration {
 			$table->integer('category')->nullable();
 			$table->string('post_image');
 			$table->longText('meta_description');
-			$table->string('author');
+			$table->integer('user_id');
 			$table->boolean('is_draft')->default(1);
+			$table->string('author')->nullable();
 			$table->timestamps();
 			$table->timestamp('published_at')->nullable()->index();
 			$table->softDeletes();

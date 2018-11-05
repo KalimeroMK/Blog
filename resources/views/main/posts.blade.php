@@ -88,9 +88,10 @@
                         <div class="float-left-right text-center mt-40 mt-sm-20">
 
                             <ul class="mb-30 list-li-mt-10 list-li-mr-5 list-a-plr-15 list-a-ptb-7 list-a-bg-grey list-a-br-2 list-a-hvr-primary ">
-                                <li><a href="#">MULTIPURPOSE</a></li>
-                                <li><a href="#">FASHION</a></li>
-                                <li class="mr-0"><a href="#">BLOGS</a></li>
+                                  @foreach($post->tags as $tag)
+                                <li><a href="#">{{ $tag->tag }}</a></li>
+                                      @endforeach
+
                             </ul>
                             <ul class="mb-30 list-a-bg-grey list-a-hw-radial-35 list-a-hvr-primary list-li-ml-5">
                                 <li class="mr-10 ml-0">Share</li>

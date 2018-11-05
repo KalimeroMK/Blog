@@ -42,38 +42,13 @@ class Tag extends Model
      * @var array
      */
     protected $casts = [
-        'tag'               => 'string',
-        'title'             => 'string',
-        'subtitle'          => 'string',
-        'post_image'        => 'string',
-        'meta_description'  => 'string',
+        'tag' => 'string',
+        'title' => 'string',
+        'subtitle' => 'string',
+        'post_image' => 'string',
+        'meta_description' => 'string',
         'reverse_direction' => 'boolean',
     ];
-
-    /**
-     * The many-to-many relationship between tags and posts.
-     *
-     * @return BelongsToMany
-     */
-    public function posts()
-    {
-        return $this->belongsToMany('App\Models\Post', 'post_tag_pivot');
-    }
-
-    /**
-     * Return a tag link.
-     *
-     * @param string $base
-     *
-     * @return string
-     */
-    public function link($base = '/?tag=%TAG%')
-    {
-        $url = str_replace('%TAG%', urlencode($this->tag), $base);
-        $tagLink = '<a href="'.$url.'">'.e($this->tag).'</a>';
-
-        return $tagLink;
-    }
 
     /**
      * Add any tags needed from the list.
@@ -90,28 +65,35 @@ class Tag extends Model
 
         foreach (array_diff($tags, $found) as $tag) {
             static::create([
-                'tag'               => $tag,
-                'title'             => $tag,
-                'subtitle'          => 'Articles tagged: '.$tag,
-                'post_image'        => '',
-                'meta_description'  => '',
+                'tag' => $tag,
+                'title' => $tag,
+                'subtitle' => 'Articles tagged: ' . $tag,
+                'post_image' => '',
+                'meta_description' => '',
                 'reverse_direction' => false,
             ]);
         }
     }
 
     /**
-     * Return the index layout to use for a tag.
+     * Return a tag link.
      *
-     * @param string $tag
-     * @param string $default
+     * @param string $base
      *
      * @return string
      */
-    public static function layout($tag, $default = 'blog.roll-layouts.home')
+    public function link($base = '/?tag=%TAG%')
     {
-        $layout = static::whereTag($tag)->pluck('layout');
+        $url = str_replace('%TAG%', urlencode($this->tag), $base);
+        $tagLink = '<a href="' . $url . '">' . e($this->tag) . '</a>';
 
-        return $layout[0] ?: $default;
+        return $tagLink;
     }
+
+    public function posts()
+    {
+        return $this->belongsToMany('App\Models\Post', 'post_tag_pivot');
+    }
+
+
 }

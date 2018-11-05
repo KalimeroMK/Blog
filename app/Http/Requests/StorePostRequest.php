@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Auth;
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -28,7 +28,6 @@ class StorePostRequest extends FormRequest {
 			'post_image' => 'required',
 			'meta_description' => 'required|max:255',
 			'is_draft' => 'nullable',
-			'author' => 'required',
 //            'slug' => 'required|unique:posts,id,' . $this->id,
 			'publish_date' => 'required',
 			'publish_time' => 'required',
@@ -45,6 +44,7 @@ class StorePostRequest extends FormRequest {
 		$published_at = new Carbon(
 			$this->publish_date . ' ' . $this->publish_time
 		);
+		$id = Auth::id();
 
 		return [
 			'title' => $this->title,
@@ -53,7 +53,7 @@ class StorePostRequest extends FormRequest {
 			'content_raw' => $this->get('content'),
 			'meta_description' => $this->meta_description,
 			'is_draft' => (bool) $this->is_draft,
-			'author' => $this->author,
+			'user_id' => $this->user_id,
 			'slug' => str_slug($this->title),
 			'published_at' => $published_at,
 			'category' => $this->category,

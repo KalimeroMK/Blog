@@ -14,7 +14,7 @@ class PostTableSeeder extends Seeder {
 				'content_raw' => implode($faker->paragraphs(5)),
 				'post_image' => 'https://d1bvpoagx8hqbg.cloudfront.net/originals/erasmus-experience-skopje-macedonia-greet-fc92b3bb934834b4df31453c40c8b61d.jpg',
 				'meta_description' => $faker->word,
-				'author' => $faker->name,
+				'user_id' => '1',
 				'category' => $faker->numberBetween($min = 1, $max = 10),
 				'views' => $faker->numberBetween($min = 1, $max = 9999),
 				'slug' => $faker->name,

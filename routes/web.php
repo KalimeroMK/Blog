@@ -102,6 +102,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:perms.us
 
 Route::get('/', 'HomePageController@index');
 Route::get('/posts/{slug}', 'HomePageController@post');
+Route::get('/tags/{slug}', 'HomePageController@tags');
+
 Route::get('/categories/{slug}', 'HomePageController@categories');
 // RSS Feed Route
 Route::feeds();
