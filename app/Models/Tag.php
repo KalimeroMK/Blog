@@ -29,11 +29,7 @@ class Tag extends Model
      */
     protected $fillable = [
         'tag',
-        'title',
-        'subtitle',
-        'post_image',
-        'meta_description',
-        'reverse_direction',
+        
     ];
 
     /**
@@ -43,11 +39,7 @@ class Tag extends Model
      */
     protected $casts = [
         'tag' => 'string',
-        'title' => 'string',
-        'subtitle' => 'string',
-        'post_image' => 'string',
-        'meta_description' => 'string',
-        'reverse_direction' => 'boolean',
+
     ];
 
     /**
@@ -66,11 +58,7 @@ class Tag extends Model
         foreach (array_diff($tags, $found) as $tag) {
             static::create([
                 'tag' => $tag,
-                'title' => $tag,
-                'subtitle' => 'Articles tagged: ' . $tag,
-                'post_image' => '',
-                'meta_description' => '',
-                'reverse_direction' => false,
+
             ]);
         }
     }

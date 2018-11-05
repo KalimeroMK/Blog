@@ -63,14 +63,14 @@ class TagController extends Controller
         $tag->save();
 
         return redirect('/admin/tags')
-                ->withSuccess(trans('messages.success.tag-created', ['tag' => $tag->tag]));
+            ->withSuccess(trans('messages.success.tag-created', ['tag' => $tag->tag]));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int                      $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -86,7 +86,7 @@ class TagController extends Controller
      * Update the specified resource in storage.
      *
      * @param \App\Http\Requests\UpdateTagRequest $request
-     * @param int                                 $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -102,14 +102,14 @@ class TagController extends Controller
         $tag->save();
 
         return redirect("/admin/tags/$id/edit")
-                    ->withSuccess(trans('messages.success.tag-updated', ['tag' => $tag->tag]));
+            ->withSuccess(trans('messages.success.tag-updated', ['tag' => $tag->tag]));
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param \App\Http\Requests\DestroyTagRequest $request
-     * @param int                                  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
