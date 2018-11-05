@@ -53,15 +53,18 @@ class HomePageController extends Controller
 
     }
 
-    public function tags(Request $request, $slug)
+    public function tags($slug)
     {
         $allcategories = Category::get();
         $categories = Category::roots()->get();
         $tree = Category::getTreeHP($categories);
 
-        $tag = tag::all();
-        $post = $tag->posts;
-        $data = ["post" => $post, "tree" => $tree, "categories" => $categories, "allcategories" => $allcategories, "tag" => $tag];
+        $post = Tag::with('posts')
+            ->where('tag', '=', $slug)
+            ->firstOrFail();
+
+
+        $data = ["post" => $post, "tree" => $tree, "categories" => $categories, "allcategories" => $allcategories];
 
 
         return view('main.tags')->with($data);

@@ -143,7 +143,7 @@ class Post extends Model implements Feedable
         $this->attributes['content_html'] = $markdown->toHTML($value);
     }
 
-    public function tagLinks($base = '/?tag=%TAG%')
+    public function tagLinks($base = '/tags/%TAG%')
     {
         $tags = $this->tags()->pluck('tag')->all();
         $return = [];
