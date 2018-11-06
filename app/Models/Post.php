@@ -51,8 +51,8 @@ class Post extends Model implements Feedable
         'content_html',
         'post_image',
         'meta_description',
-        'layout',
-        'creator',
+        'author',
+        'category',
         'slug',
         'is_draft',
         'published_at',
@@ -71,10 +71,9 @@ class Post extends Model implements Feedable
         'content_html' => 'string',
         'post_image' => 'string',
         'meta_description' => 'string',
-        'layout' => 'string',
+        'author' => 'string',
+        'category' => 'string',
         'is_draft' => 'boolean',
-        'creator' => 'integer',
-
         'published_at' => 'datetime:Y-m-d',
     ];
 
@@ -143,7 +142,77 @@ class Post extends Model implements Feedable
         $this->attributes['content_html'] = $markdown->toHTML($value);
     }
 
-    public function tagLinks($base = '/tags/%TAG%')
+    /**
+     * Sync tag relation adding new tags as needed.
+     *
+     * @param array $tags
+     */
+    public function syncTags(array $tags)
+    {
+        Tag::addNeededTags($tags);
+
+        if (count($tags)) {
+            $this->tags()->sync(
+                Tag::whereIn('tag', $tags)->pluck('id')->all()
+            );
+
+            return;
+        }
+
+        $this->tags()->detach();
+    }
+
+    /**
+     * The many-to-many relationship between pages and tags.
+     *
+     * @return BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany('App\Models\Tag', 'post_tag_pivot');
+    }
+
+    /**
+     * Return the date portion of published_at.
+     */
+    public function getPublishDateAttribute($value)
+    {
+        return $this->published_at;
+    }
+
+    /**
+     * Alias for content_raw.
+     */
+    public function getContentAttribute($value)
+    {
+        return $this->content_raw;
+    }
+
+    /**
+     * Return URL to page.
+     *
+     * @param Tag $tag
+     *
+     * @return string
+     */
+    public function url(Tag $tag = null)
+    {
+        $url = url('/' . $this->slug);
+        if ($tag) {
+            $url .= '?tag=' . urlencode($tag->tag);
+        }
+
+        return $url;
+    }
+
+    /**
+     * Return array of tag links.
+     *
+     * @param string $base
+     *
+     * @return array
+     */
+    public function tagLinks($base = '/?tag=%TAG%')
     {
         $tags = $this->tags()->pluck('tag')->all();
         $return = [];
@@ -156,12 +225,48 @@ class Post extends Model implements Feedable
         return $return;
     }
 
-
-    public function tags()
+    /**
+     * Return next post after this one or null.
+     *
+     * @param Tag $tag
+     *
+     * @return Post
+     */
+    public function newerPost(Tag $tag = null)
     {
-        return $this->belongsToMany('App\Models\Tag', 'post_tag_pivot');
+        $query = static::where('published_at', '>', $this->published_at)
+            ->where('published_at', '<=', Carbon::now())
+            ->where('is_draft', 0)
+            ->orderBy('published_at', 'asc');
+        if ($tag) {
+            $query = $query->whereHas('tags', function ($q) use ($tag) {
+                $q->where('tag', '=', $tag->tag);
+            });
+        }
+
+        return $query->first();
     }
 
+    /**
+     * Return older post before this one or null.
+     *
+     * @param Tag $tag
+     *
+     * @return Post
+     */
+    public function olderPost(Tag $tag = null)
+    {
+        $query = static::where('published_at', '<', $this->published_at)
+            ->where('is_draft', 0)
+            ->orderBy('published_at', 'desc');
+        if ($tag) {
+            $query = $query->whereHas('tags', function ($q) use ($tag) {
+                $q->where('tag', '=', $tag->tag);
+            });
+        }
+
+        return $query->first();
+    }
 
     /**
      * Model RSS feed items to return.
@@ -176,8 +281,99 @@ class Post extends Model implements Feedable
             'summary' => $this->content_html,
             'updated' => $this->updated_at,
             'link' => $this->slug,
-            'post_id' => $this->id,
+            'author' => $this->author,
         ]);
+    }
+
+    /**
+     * Scope a query to get only published posts with tags.
+     *
+     * @return collection
+     */
+    public function scopeAllPublishedPosts($query)
+    {
+        return $query->with('tags')
+            ->publishedTimePast()
+            ->isNotDraft()
+            ->orderBy('published_at', 'desc');
+    }
+
+    /**
+     * Scope a query to get by slug.
+     *
+     * @param string $slug
+     *
+     * @return collection
+     */
+    public function scopeBySlug($query, $slug)
+    {
+        $query->whereSlug($slug);
+    }
+
+    /**
+     * Scope a query to show posts not marked as drafts.
+     *
+     * @return collection
+     */
+    public function scopeIsNotDraft($query)
+    {
+        $query->where('is_draft', 0);
+    }
+
+    /**
+     * Scope a query to show posts that the have past the published date and time.
+     *
+     * @return collection
+     */
+    public function scopePublishedTimePast($query)
+    {
+        return $query->where('published_at', '<=', Carbon::now());
+    }
+
+    /**
+     * Scope a query to all posts authors.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAuthors($query)
+    {
+        return $query->select('author')
+            ->distinct()
+            ->orderBy('author', 'asc');
+    }
+
+    /**
+     * Scope a query to only authors with published posts.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeActiveAuthors($query)
+    {
+        return $query->select('author')
+            ->publishedTimePast()
+            ->isNotDraft()
+            ->distinct()
+            ->orderBy('author', 'asc');
+    }
+
+    /**
+     * Scope a query to only authors with published posts.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePostsByAuthors($query, $author)
+    {
+        return $query->with('tags')
+            ->where('author', $author)
+            ->publishedTimePast()
+            ->isNotDraft()
+            ->orderBy('published_at', 'desc');
     }
 
 

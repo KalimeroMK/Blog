@@ -19,11 +19,10 @@ class CreatePostsTable extends Migration
             $table->longText('title');
             $table->longText('subtitle');
             $table->longText('content_raw');
-            $table->longText('content_html');
             $table->integer('category')->nullable();
             $table->string('post_image');
             $table->longText('meta_description');
-            $table->integer('user_id');
+            $table->string('author');
             $table->boolean('is_draft')->default(1);
             $table->timestamps();
             $table->timestamp('published_at')->nullable()->index();

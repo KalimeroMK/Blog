@@ -98,9 +98,9 @@
                                                 : {{ $post->images()->count() }}</span></td>
 
                                         <td>
-                                            @foreach ($users as $user)
-                                                {{ $user->name }}
-                                            @endforeach
+                                        <!-- <a href="{{ url('/admin/authors/' . $post->author) }}" > -->
+                                        {{ $post->author }}
+                                        <!-- </a> -->
                                         </td>
                                         <td>
                                 <span class="badge badge-light badge-pill">
