@@ -1,7 +1,10 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -31,6 +34,7 @@
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",
         "orangehill/iseed": "dev-master",
+        "nesbot/carbon": "^1.25",
         "phpunit/phpunit": "^7.0"
     },
     "autoload": {
@@ -42,7 +46,7 @@
             "App\\": "app/"
         },
         "files": [
-          "app/Logic/helpers.php"
+            "app/Logic/helpers.php"
         ]
     },
     "autoload-dev": {

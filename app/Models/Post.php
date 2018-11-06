@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Services\Markdowner;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Feed\Feedable;
@@ -48,7 +49,6 @@ class Post extends Model implements Feedable
         'title',
         'subtitle',
         'content_raw',
-        'content_html',
         'post_image',
         'meta_description',
         'author',
@@ -68,7 +68,6 @@ class Post extends Model implements Feedable
         'title' => 'string',
         'subtitle' => 'string',
         'content_raw' => 'string',
-        'content_html' => 'string',
         'post_image' => 'string',
         'meta_description' => 'string',
         'author' => 'string',
@@ -212,7 +211,7 @@ class Post extends Model implements Feedable
      *
      * @return array
      */
-    public function tagLinks($base = '/?tag=%TAG%')
+    public function tagLinks($base = '/tags/%TAG%')
     {
         $tags = $this->tags()->pluck('tag')->all();
         $return = [];

@@ -29,21 +29,6 @@
                 </div>
             @endif
         </div>
-
-        {{--<div class="form-group has-feedback row {{ $errors->has('slug') ? ' has-error ' : '' }}">--}}
-        {{--{!! Form::label('slug', trans('forms.edit-post.labels.post-slug'), ['class' => 'col-12 control-label']); !!}--}}
-        {{--<div class="col-12">--}}
-        {{--{!! Form::text('slug', $slug, array('id' => 'slug', 'class' => 'form-control', 'placeholder' => trans('forms.edit-post.labels.post-slug'))) !!}--}}
-        {{--</div>--}}
-        {{--@if ($errors->has('slug'))--}}
-        {{--<div class="col-12">--}}
-        {{--<span class="help-block">--}}
-        {{--<strong>{{ $errors->first('slug') }}</strong>--}}
-        {{--</span>--}}
-        {{--</div>--}}
-        {{--@endif--}}
-        {{--</div>--}}
-
         <div class="form-group has-feedback row {{ $errors->has('post_image') ? ' has-error ' : '' }}">
             {!! Form::label('post_image', trans('forms.edit-post.labels.post-post_image'), ['class' => 'col-12 control-label']); !!}
             <div class="col-12">
