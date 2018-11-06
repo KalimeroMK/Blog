@@ -334,28 +334,7 @@ RECAPTCHA_CDN=https://www.google.com/recaptcha/api.js
 ```
 
 ### Screenshots
-![LaraBlog](https://s3-us-west-2.amazonaws.com/larablog.io/1-larablog-home.jpg)
-![LaraBlog Post](https://s3-us-west-2.amazonaws.com/larablog.io/2-larablog-post.jpg)
-![LaraBlog Post Comments](https://s3-us-west-2.amazonaws.com/larablog.io/22-larablog-comments.jpg)
-![LaraBlog Tags](https://s3-us-west-2.amazonaws.com/larablog.io/3-larablog-tags.jpg)
-![LaraBlog Author](https://s3-us-west-2.amazonaws.com/larablog.io/4-larablog-author.jpg)
-![LaraBlog Authors](https://s3-us-west-2.amazonaws.com/larablog.io/5-larablog-authors.jpg)
-![LaraBlog Contact](https://s3-us-west-2.amazonaws.com/larablog.io/6-larablog-contact.jpg)
-![LaraBlog Admin Dashboard](https://s3-us-west-2.amazonaws.com/larablog.io/7-larablog-admin-dashboard.jpg)
-![LaraBlog Admin Posts](https://s3-us-west-2.amazonaws.com/larablog.io/8-larablog-admin-posts.jpg)
-![LaraBlog Admin Post Create](https://s3-us-west-2.amazonaws.com/larablog.io/9-larablog-admin-post-create.jpg)
-![LaraBlog Admin Post Edit](https://s3-us-west-2.amazonaws.com/larablog.io/10-larablog-admin-post-edit.jpg)
-![LaraBlog Admin Tags](https://s3-us-west-2.amazonaws.com/larablog.io/11-larablog-admin-post-tags.jpg)
-![LaraBlog Admin Tag Edit](https://s3-us-west-2.amazonaws.com/larablog.io/12-larablog-admin-post-tag-edit.jpg)
-![LaraBlog Admin Files](https://s3-us-west-2.amazonaws.com/larablog.io/13-larablog-admin-files.jpg)
-![LaraBlog Admin File Manager Pop Up](https://s3-us-west-2.amazonaws.com/larablog.io/21-larablog-admin-file-manager-pop-up.jpg)
-![LaraBlog Admin Upload](https://s3-us-west-2.amazonaws.com/larablog.io/14-larablog-admin-files-upload.jpg)
-![LaraBlog Admin Users](https://s3-us-west-2.amazonaws.com/larablog.io/15-larablog-admin-users.jpg)
-![LaraBlog Admin User](https://s3-us-west-2.amazonaws.com/larablog.io/16-larablog-admin-user.jpg)
-![LaraBlog Admin User Edit](https://s3-us-west-2.amazonaws.com/larablog.io/17-larablog-admin-user-edit.jpg)
-![LaraBlog Admin Sitemap](https://s3-us-west-2.amazonaws.com/larablog.io/20-larablog-admin-sitemap-gen.jpg)
-![LaraBlog Admin PHP Info](https://s3-us-west-2.amazonaws.com/larablog.io/18-larablog-admin-phpinfo.jpg)
-![LaraBlog Admin Activity](https://s3-us-west-2.amazonaws.com/larablog.io/19-larablog-admin-activity.jpg)
+
 
 ### File Tree
 
