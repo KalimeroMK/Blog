@@ -25,7 +25,7 @@
                                         </li>
                                         @foreach($posts->tags as $tag)
                                             <li>
-                                                <i class="color-primary mr-5 font-12 ion-ios-pricetag"></i>{{ $tag->tag }}</span>
+                                                <i class="color-primary mr-5 font-12 ion-ios-pricetag"></i>{{ $tag->tag }}
                                             </li>
                                         @endforeach
                                     </ul>

@@ -7,7 +7,9 @@ use App\Models\Post;
 use App\Models\Sliders;
 use App\Models\Tag;
 use App\Models\User as User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+
 
 class HomePageController extends Controller
 {
@@ -28,6 +30,7 @@ class HomePageController extends Controller
         // dd($data);
         return view('main.homepage')->with($data);
     }
+
 
     /**
      * Display the specified resource.
@@ -58,13 +61,19 @@ class HomePageController extends Controller
         $allcategories = Category::get();
         $categories = Category::roots()->get();
         $tree = Category::getTreeHP($categories);
+        $tag = Tag::where('tag', $slug)->firstOrFail();
+        $reverse_direction = (bool)$tag->reverse_direction;
 
-        $post = Tag::with('posts')
-            ->where('tag', '=', $slug)
-            ->firstOrFail();
+        $post = Post::where('published_at', '<=', Carbon::now())
+            ->whereHas('tags', function ($q) use ($tag) {
+                $q->where('tag', '=', $tag->tag);
+            })
+            ->where('is_draft', 0)
+            ->orderBy('published_at', $reverse_direction ? 'asc' : 'desc')
+            ->paginate(10);
 
 
-        $data = ["post" => $post, "tree" => $tree, "categories" => $categories, "allcategories" => $allcategories];
+        $data = ["post" => $post, "categories" => $categories, "tree" => $tree, "allcategories" => $allcategories];
 
 
         return view('main.tags')->with($data);

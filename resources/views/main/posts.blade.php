@@ -37,71 +37,59 @@
                     <div class="col-8">
 
 
-                        @if( empty($slider['user_id']))
+                        @if( !empty($slider['user_id']))
                             <img src="{{$post->post_image}}" alt="{{$post->title}}">
 
                         @else
-                            <div class="slider noMarginBottom">
+                            <main role="main">
                                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <!-- Indicators -->
                                     <ol class="carousel-indicators">
                                         @foreach($sliders as $key => $slider)
                                             <li data-target="#myCarousel" data-slide-to="{{ $key }}"
                                                 @if ($key == 0) class="active" @else @endif ></li>
                                         @endforeach
-                                    </ol>
 
-                                    <!-- Wrapper for slides -->
+                                    </ol>
                                     <div class="carousel-inner">
                                         @foreach($sliders as $key => $slider)
 
-                                            <div class="item {{ $key == 0 ? 'active' : '' }}">
+                                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
 
-                                                <img src="/images/sliders/{{$slider->imagethumb}}" alt="image"
-                                                     class="img-responsive">
+                                                <img src="/images/sliders/{{$slider->imagethumb}}" alt="image">
                                             </div>
                                         @endforeach
-
                                     </div>
-                                    <!-- Left and right controls -->
-                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
                                 </div>
-                            </div>
-                            <h3 class="mt-30"><b>{{$post->title}}</b></h3>
-                            <ul class="list-li-mr-20 mtb-15">
-                                <li>by <a href="#"><b>Olivia Capzallo </b></a> Jan 25, 2018</li>
-                                <li><i class="color-primary mr-5 font-12 ion-ios-bolt"></i>30,190</li>
-                                <li><i class="color-primary mr-5 font-12 ion-chatbubbles"></i>30</li>
-                            </ul>
 
-                        @endif
+                                @endif
 
-                        <p class="mtb-15">{!!$post->content_raw!!}</p>
+                                <p class="mtb-15">{!!$post->content_raw!!}</p>
 
-                        <div class="float-left-right text-center mt-40 mt-sm-20">
+                                <div class="float-left-right text-center mt-40 mt-sm-20">
 
-                            <ul class="mb-30 list-li-mt-10 list-li-mr-5 list-a-plr-15 list-a-ptb-7 list-a-bg-grey list-a-br-2 list-a-hvr-primary ">
-                                  @foreach($post->tags as $tag)
-                                <li><a href="#">{{ $tag->tag }}</a></li>
-                                      @endforeach
+                                    <ul class="mb-30 list-li-mt-10 list-li-mr-5 list-a-plr-15 list-a-ptb-7 list-a-bg-grey list-a-br-2 list-a-hvr-primary ">
+                                        @foreach($post->tags as $tag)
+                                            <li><a href="/tags/{{ $tag->tag }}">{{ $tag->tag }}</a></li>
+                                        @endforeach
 
-                            </ul>
-                            <ul class="mb-30 list-a-bg-grey list-a-hw-radial-35 list-a-hvr-primary list-li-ml-5">
-                                <li class="mr-10 ml-0">Share</li>
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-google"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                            </ul>
+                                    </ul>
+                                    <ul class="mb-30 list-a-bg-grey list-a-hw-radial-35 list-a-hvr-primary list-li-ml-5">
+                                        <li class="mr-10 ml-0">Share</li>
+                                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-google"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    </ul>
 
-                        </div>
+                                </div>
                     </div>
                     <div class="col-4">
                         <div class="sidebarBlog">
