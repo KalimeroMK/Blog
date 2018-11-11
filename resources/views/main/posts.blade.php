@@ -29,10 +29,20 @@
 <meta name="author" content="Zoran Shefot Bogoevski">
 @include('layouts.menu')
 @section('content')
+
+    <section class="ptb-0">
+        <div class="mb-30 brdr-ash-1 opacty-5"></div>
+        <div class="container">
+            <a class="mt-10" href="index.html"><i class="mr-5 ion-ios-home"></i>Home<i class="mlr-10 ion-chevron-right"></i></a>
+            <a class="mt-10" href="archive-page.html">Blog Archive<i class="mlr-10 ion-chevron-right"></i></a>
+            <a class="mt-10 color-ash" href="single-page.html">Single Blog</a>
+        </div><!-- container -->
+    </section>
+
     <!--Header End-->
     <section style="margin-top: 2%">
         <div class="container">
-            <div class="col-12">
+                <div class="col-md-12 col-lg-12">
                 <div class="row">
                     <div class="col-8">
 

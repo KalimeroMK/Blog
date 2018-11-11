@@ -11,11 +11,39 @@
                         <li><a href="#">Contact</a></li>
                     </ul>
                     <ul class="float-right float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-5">
-                        <li><a class="pl-0 pl-sm-10" href="#"><i class="ion-social-facebook"></i></a></li>
-                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="#"><i class="ion-social-google"></i></a></li>
-                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                        <li><a href="#"><i class="ion-social-bitcoin"></i></a></li>
+                         @if($settings->twitter)
+                                        <li class="twitter"><a target="_blank" href="{{ $settings->twitter }}"><i
+                                                        class="ion-social-twitter"></i></a></li>
+                                    @endif
+                                    @if($settings->skype)
+                                        <li class="skype"><a target="_blank" href="{{ $settings->skype }}"><i
+                                                        class="ion-social-skype"></i></a></li>
+                                    @endif
+                                    @if($settings->linkedin)
+                                        <li class="linkedin"><a target="_blank" href="{{ $settings->linkedin }}"><i
+                                                        class="ion-social-linkedin"></i></a></li>
+                                    @endif
+                                    @if($settings->gplus)
+                                        <li class="googleplus"><a target="_blank" href="{{$settings->gplus}}"><i
+                                                        class="ion-social-gplus"></i></a></li>
+                                    @endif
+                                    @if($settings->youtube)
+                                        <li class="youtube"><a target="_blank" href="{{$settings->youtube}}"><i
+                                                        class="ion-social-youtube"></i></a></li>
+                                    @endif
+                                    @if($settings->flickr)
+                                        <li class="flickr"><a target="_blank" href="{{ $settings->flickr }}"><i
+                                                        class="ion-social-flickr"></i></a></li>
+                                    @endif
+                                    @if($settings->facebook)
+                                        <li class="facebook"><a target="_blank" href="{{ $settings->facebook }}"><i
+                                                        class="ion-social-facebook"></i></a></li>
+                                    @endif
+                                    @if($settings->pinterest)
+                                        <li class="pinterest"><a target="_blank" href="{{$settings->pinterest}}"><i
+                                                        class="ion-social-pinterest"></i></a></li>
+                                    @endif
+
                     </ul>
 
                 </div><!-- top-menu -->
@@ -42,10 +70,10 @@
             <ul class="main-menu" id="main-menu">
              {!! $tree !!}
             </ul>
+<div class="clearfix"></div>
 
         </div><!-- container -->
     </header>
-<div class="clearfix"></div>
 
 
 @endsection

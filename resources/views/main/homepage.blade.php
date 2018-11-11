@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @include('layouts.menu')
 @section('content')
-    <div class="clearfix"></div>
 
     <div class="container">
         <div class="h-600x h-sm-auto">
@@ -25,7 +24,8 @@
                                         </li>
                                         @foreach($posts->tags as $tag)
                                             <li>
-                                                <i class="color-primary mr-5 font-12 ion-ios-pricetag"></i>{{ $tag->tag }}
+                                               <i class="color-primary mr-5 font-12 ion-ios-pricetag"></i>{{ $tag->tag }}
+
                                             </li>
                                         @endforeach
                                     </ul>
