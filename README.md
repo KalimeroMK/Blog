@@ -1,5 +1,5 @@
 ## KalimeroCMS
-#### A powerful open source Laravel BlogCMS with WYSWYG, CRUD (Create Read Update Delete) , Category tree, post gallery and SOE features built on [Laravel](http://laravel.com/) 5.7  [jeremykenedy/laravel-auth](https://github.com/jeremykenedy/laravel-auth) 5.7 and [Bootstrap](http://getbootstrap.com) 4
+#### A powerful open source Laravel BlogCMS with WYSWYG, CRUD (Create Read Update Delete) , Category tree, post gallery and SOE features built on [Laravel](http://laravel.com/)and [Bootstrap](http://getbootstrap.com) 4
 
 [![Build Status](https://travis-ci.org/jeremykenedy/larablog.svg?branch=master)](https://travis-ci.org/jeremykenedy/larablog)
 [![StyleCI](https://github.styleci.io/repos/40459558/shield?branch=master)](https://github.styleci.io/repos/40459558)
