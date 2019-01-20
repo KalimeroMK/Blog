@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\GenerateSitemapRequest;
 use Illuminate\Support\Facades\Artisan;
 use Spatie\Sitemap\Sitemap;
+use App\Models\Settings;
+use App\Models\Sliders;
+use App\Models\Tag;
+use App\Models\User as User;
+use App\Models\Post;
+
 
 class AdminController extends Controller
 {
@@ -28,6 +34,17 @@ class AdminController extends Controller
     {
         return view('admin.pages.home');
     }
+    public function post($slug) {
+		$tag = tag::all();
+		$users = User::all();
+		$post = Post::where('slug', '=', $slug)->first();
+		Post::where('slug', $slug)->update(['views' => $post->views + 1]);
+		$sliders = Sliders::where('post_id', '=', $post->id)->get();
+		$data = ["sliders" => $sliders, "post" => $post, "tag" => $tag];
+//        dd($data);
+		return view('admin.pages.post')->with($data);
+
+	}
 
     /**
      * Show the application files manager/uploads dashboard.

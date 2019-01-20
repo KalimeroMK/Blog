@@ -38,6 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:perms.su
 
 // Writer and above routes
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:perms.writer', 'activity']], function () {
+	Route::get('/pages/posts/{slug}', 'Admin\AdminController@post');
+
 	Route::resource('posts', 'Admin\PostController', [
 		'names' => [
 			'create' => 'posts.create',

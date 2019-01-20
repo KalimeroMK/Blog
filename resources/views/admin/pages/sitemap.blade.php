@@ -21,7 +21,7 @@
                     {!! trans('admin.sitemap.card-title') !!}
                 </h5>
                 <p class="card-category">
-                    {!! trans('admin.sitemap.card-sub-title', ['count' => $sitemap->count()]) !!}
+                    {!! trans('admin.sitemap.card-sub-title', [count($sitemap->tasks)]) !!}
 
                 </p>
             </div>

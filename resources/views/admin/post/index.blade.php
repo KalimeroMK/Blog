@@ -118,7 +118,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="/posts/{{ $post->slug }}" class="btn btn-sm btn-block btn-warning"
+                                            <a href="/admin/pages/posts/{{ $post->slug }}" class="btn btn-sm btn-block btn-warning"
                                                data-toggle="tooltip" data-placement="top"
                                                title="{!! trans('tooltips.post.view') !!}">
                                                 <i class="fa fa-eye fa-fw"></i>
@@ -169,4 +169,5 @@
             });
         });
     </script>
+   
 @endpush

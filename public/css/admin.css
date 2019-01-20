@@ -134,7 +134,7 @@
   padding: 6px 12px;
   display: inline-block;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   z-index: 1;
   -webkit-box-sizing: border-box;
@@ -237,7 +237,7 @@
 }
 .selectize-dropdown [data-selectable] {
   cursor: pointer;
-  overflow: hidden;
+  overflow: auto;
 }
 .selectize-dropdown [data-selectable] .highlight {
   background: rgba(255, 237, 40, 0.4);
@@ -276,7 +276,7 @@
 }
 .selectize-dropdown-content {
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   max-height: 200px;
   -webkit-overflow-scrolling: touch;
 }
@@ -342,7 +342,7 @@
   display: block;
   height: 1px;
   margin: 9px 0;
-  overflow: hidden;
+  overflow: auto;
   background-color: #e5e5e5;
   margin-left: -12px;
   margin-right: -12px;
@@ -528,7 +528,7 @@
   padding: 8px 8px;
   display: inline-block;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   z-index: 1;
   -webkit-box-sizing: border-box;
@@ -631,7 +631,7 @@
 }
 .selectize-dropdown [data-selectable] {
   cursor: pointer;
-  overflow: hidden;
+  overflow: auto;
 }
 .selectize-dropdown [data-selectable] .highlight {
   background: rgba(125, 168, 208, 0.2);
@@ -670,7 +670,7 @@
 }
 .selectize-dropdown-content {
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   max-height: 200px;
   -webkit-overflow-scrolling: touch;
 }
@@ -928,7 +928,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
  * Released under the MIT license
  *
  * Date: 2015-03-21T04:58:27.265Z
- */.cropper-container{position:relative;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.cropper-container img{display:block;width:100%;min-width:0!important;max-width:none!important;height:100%;min-height:0!important;max-height:none!important;image-orientation:0deg!important}.cropper-canvas,.cropper-crop-box,.cropper-drag-box,.cropper-modal{position:absolute;top:0;right:0;bottom:0;left:0}.cropper-drag-box{background-color:#fff;filter:alpha(opacity=0);opacity:0}.cropper-modal{background-color:#000;filter:alpha(opacity=50);opacity:.5}.cropper-view-box{display:block;width:100%;height:100%;overflow:hidden;outline:#69f solid 1px;outline-color:rgba(102,153,255,.75)}.cropper-dashed{position:absolute;display:block;filter:alpha(opacity=50);border:0 dashed #fff;opacity:.5}.cropper-dashed.dashed-h{top:33.33333333%;left:0;width:100%;height:33.33333333%;border-top-width:1px;border-bottom-width:1px}.cropper-dashed.dashed-v{top:0;left:33.33333333%;width:33.33333333%;height:100%;border-right-width:1px;border-left-width:1px}.cropper-face,.cropper-line,.cropper-point{position:absolute;display:block;width:100%;height:100%;filter:alpha(opacity=10);opacity:.1}.cropper-face{top:0;left:0;cursor:move;background-color:#fff}.cropper-line{background-color:#69f}.cropper-line.line-e{top:0;right:-3px;width:5px;cursor:e-resize}.cropper-line.line-n{top:-3px;left:0;height:5px;cursor:n-resize}.cropper-line.line-w{top:0;left:-3px;width:5px;cursor:w-resize}.cropper-line.line-s{bottom:-3px;left:0;height:5px;cursor:s-resize}.cropper-point{width:5px;height:5px;background-color:#69f;filter:alpha(opacity=75);opacity:.75}.cropper-point.point-e{top:50%;right:-3px;margin-top:-3px;cursor:e-resize}.cropper-point.point-n{top:-3px;left:50%;margin-left:-3px;cursor:n-resize}.cropper-point.point-w{top:50%;left:-3px;margin-top:-3px;cursor:w-resize}.cropper-point.point-s{bottom:-3px;left:50%;margin-left:-3px;cursor:s-resize}.cropper-point.point-ne{top:-3px;right:-3px;cursor:ne-resize}.cropper-point.point-nw{top:-3px;left:-3px;cursor:nw-resize}.cropper-point.point-sw{bottom:-3px;left:-3px;cursor:sw-resize}.cropper-point.point-se{right:-3px;bottom:-3px;width:20px;height:20px;cursor:se-resize;filter:alpha(opacity=100);opacity:1}.cropper-point.point-se:before{position:absolute;right:-50%;bottom:-50%;display:block;width:200%;height:200%;content:" ";background-color:#69f;filter:alpha(opacity=0);opacity:0}@media (min-width:768px){.cropper-point.point-se{width:15px;height:15px}}@media (min-width:992px){.cropper-point.point-se{width:10px;height:10px}}@media (min-width:1200px){.cropper-point.point-se{width:5px;height:5px;filter:alpha(opacity=75);opacity:.75}}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-invisible{filter:alpha(opacity=0);opacity:0}.cropper-hide{position:fixed;top:0;left:0;z-index:-1;width:auto!important;min-width:0!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;filter:alpha(opacity=0);opacity:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-canvas,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed}@media screen and (max-width: 768px) {
+ */.cropper-container{position:relative;overflow:auto;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.cropper-container img{display:block;width:100%;min-width:0!important;max-width:none!important;height:100%;min-height:0!important;max-height:none!important;image-orientation:0deg!important}.cropper-canvas,.cropper-crop-box,.cropper-drag-box,.cropper-modal{position:absolute;top:0;right:0;bottom:0;left:0}.cropper-drag-box{background-color:#fff;filter:alpha(opacity=0);opacity:0}.cropper-modal{background-color:#000;filter:alpha(opacity=50);opacity:.5}.cropper-view-box{display:block;width:100%;height:100%;overflow:hidden;outline:#69f solid 1px;outline-color:rgba(102,153,255,.75)}.cropper-dashed{position:absolute;display:block;filter:alpha(opacity=50);border:0 dashed #fff;opacity:.5}.cropper-dashed.dashed-h{top:33.33333333%;left:0;width:100%;height:33.33333333%;border-top-width:1px;border-bottom-width:1px}.cropper-dashed.dashed-v{top:0;left:33.33333333%;width:33.33333333%;height:100%;border-right-width:1px;border-left-width:1px}.cropper-face,.cropper-line,.cropper-point{position:absolute;display:block;width:100%;height:100%;filter:alpha(opacity=10);opacity:.1}.cropper-face{top:0;left:0;cursor:move;background-color:#fff}.cropper-line{background-color:#69f}.cropper-line.line-e{top:0;right:-3px;width:5px;cursor:e-resize}.cropper-line.line-n{top:-3px;left:0;height:5px;cursor:n-resize}.cropper-line.line-w{top:0;left:-3px;width:5px;cursor:w-resize}.cropper-line.line-s{bottom:-3px;left:0;height:5px;cursor:s-resize}.cropper-point{width:5px;height:5px;background-color:#69f;filter:alpha(opacity=75);opacity:.75}.cropper-point.point-e{top:50%;right:-3px;margin-top:-3px;cursor:e-resize}.cropper-point.point-n{top:-3px;left:50%;margin-left:-3px;cursor:n-resize}.cropper-point.point-w{top:50%;left:-3px;margin-top:-3px;cursor:w-resize}.cropper-point.point-s{bottom:-3px;left:50%;margin-left:-3px;cursor:s-resize}.cropper-point.point-ne{top:-3px;right:-3px;cursor:ne-resize}.cropper-point.point-nw{top:-3px;left:-3px;cursor:nw-resize}.cropper-point.point-sw{bottom:-3px;left:-3px;cursor:sw-resize}.cropper-point.point-se{right:-3px;bottom:-3px;width:20px;height:20px;cursor:se-resize;filter:alpha(opacity=100);opacity:1}.cropper-point.point-se:before{position:absolute;right:-50%;bottom:-50%;display:block;width:200%;height:200%;content:" ";background-color:#69f;filter:alpha(opacity=0);opacity:0}@media (min-width:768px){.cropper-point.point-se{width:15px;height:15px}}@media (min-width:992px){.cropper-point.point-se{width:10px;height:10px}}@media (min-width:1200px){.cropper-point.point-se{width:5px;height:5px;filter:alpha(opacity=75);opacity:.75}}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-invisible{filter:alpha(opacity=0);opacity:0}.cropper-hide{position:fixed;top:0;left:0;z-index:-1;width:auto!important;min-width:0!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;filter:alpha(opacity=0);opacity:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-canvas,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed}@media screen and (max-width: 768px) {
   #main {
     padding: 0px;
   }
@@ -972,7 +972,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 
 .item_name {
   width: 120px;
-  overflow:hidden;
+  overflow:auto;
   white-space:nowrap;
   text-overflow: ellipsis;
 }
@@ -983,15 +983,12 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 
 .img-preview {
   background-color: #f7f7f7;
-  overflow: hidden;
+  overflow: auto;
   width: 100%;
   text-align: center;
   height: 200px;
 }
 
-.hidden {
-  display: none;
-}
 
 .square {
   width: 100%;
@@ -1307,7 +1304,7 @@ img {
 }
 
 svg {
-  overflow: hidden;
+  overflow: auto;
   vertical-align: middle;
 }
 
@@ -1452,9 +1449,6 @@ template {
   display: none;
 }
 
-[hidden] {
-  display: none !important;
-}
 
 h1,
 h2,
@@ -4616,7 +4610,7 @@ input[type="button"].btn-block {
 .collapsing {
   position: relative;
   height: 0;
-  overflow: hidden;
+  overflow: auto;
   -webkit-transition: height 0.35s ease;
   transition: height 0.35s ease;
 }
@@ -4782,7 +4776,7 @@ input[type="button"].btn-block {
 .dropdown-divider {
   height: 0;
   margin: 0.5rem 0;
-  overflow: hidden;
+  overflow: auto;
   border-top: 1px solid #e9ecef;
 }
 
@@ -6898,7 +6892,7 @@ input[type="button"].btn-block {
   display: -ms-flexbox;
   display: flex;
   height: 1rem;
-  overflow: hidden;
+  overflow: auto;
   font-size: 0.75rem;
   background-color: #e9ecef;
   border-radius: 0.25rem;
@@ -7203,11 +7197,11 @@ button.close {
 }
 
 .modal-open {
-  overflow: hidden;
+  overflow: auto;
 }
 
 .modal-open .modal {
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
 }
 
@@ -7219,7 +7213,7 @@ button.close {
   left: 0;
   z-index: 1050;
   display: none;
-  overflow: hidden;
+  overflow: auto;
   outline: 0;
 }
 
@@ -7722,7 +7716,7 @@ button.close {
 .carousel-inner {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .carousel-item {
@@ -8456,7 +8450,7 @@ button.bg-dark:focus {
   display: block;
   width: 100%;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .embed-responsive::before {
@@ -9571,7 +9565,7 @@ button.bg-dark:focus {
   width: 1px;
   height: 1px;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
@@ -11236,7 +11230,7 @@ button.bg-dark:focus {
 }
 
 .text-truncate {
-  overflow: hidden;
+  overflow: auto;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -11441,9 +11435,6 @@ a.text-dark:focus {
   visibility: visible !important;
 }
 
-.invisible {
-  visibility: hidden !important;
-}
 
 @media print {
   *,
@@ -19388,7 +19379,7 @@ readers do not read off random characters that represent icons */
   clip: rect(0, 0, 0, 0);
   height: 1px;
   margin: -1px;
-  overflow: hidden;
+  overflow: auto;
   padding: 0;
   position: absolute;
   width: 1px;
@@ -19600,7 +19591,7 @@ Copyright (c) 2015 Daniel Eden
 .ps-container {
   -ms-touch-action: auto;
   touch-action: auto;
-  overflow: hidden !important;
+  overflow: auto !important;
   -ms-overflow-style: none;
 }
 
@@ -19930,7 +19921,7 @@ fieldset[disabled]
   width: 2.375rem;
   padding: 0;
   font-size: 0.9375rem;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   line-height: normal;
 }
@@ -22158,7 +22149,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 .form-check-radio input[type="radio"] {
   opacity: 0;
   position: absolute;
-  visibility: hidden;
+  visibility: auto;
 }
 
 .form-check input[type="checkbox"]:checked + .form-check-sign::after {
@@ -22440,7 +22431,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 .navbar .logo-container {
   width: 27px;
   height: 27px;
-  overflow: hidden;
+  overflow: auto;
   margin: 0 auto;
   border-radius: 50%;
   border: 1px solid transparent;
@@ -23238,7 +23229,7 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: auto;
   margin: 0 auto;
 }
 
@@ -23393,7 +23384,7 @@ img {
 .table-shopping .img-container {
   width: 120px;
   max-height: 160px;
-  overflow: hidden;
+  overflow: auto;
   display: block;
 }
 
@@ -23473,7 +23464,7 @@ img {
   height: 61px;
   width: 61px;
   float: left;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .sidebar .logo-tim img,
@@ -23641,7 +23632,7 @@ img {
   text-decoration: none;
   font-weight: 400;
   line-height: 30px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .sidebar .logo-tim,
@@ -23652,7 +23643,7 @@ img {
   height: 61px;
   width: 61px;
   float: left;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .sidebar .logo-tim img,
@@ -23877,7 +23868,7 @@ img {
   background: -webkit-gradient(linear, left top, right top, from(#0c2646), color-stop(60%, #204065), to(#2a5788));
   background: linear-gradient(to right, #0c2646 0%, #204065 60%, #2a5788 100%);
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .panel-header .header .title {
@@ -24174,7 +24165,7 @@ img {
   cursor: pointer;
   display: block;
   max-height: 100px;
-  overflow: hidden;
+  overflow: auto;
   padding: 0;
 }
 
@@ -24923,7 +24914,7 @@ License - nucleoapp.com/license/
 }
 
 .card .image {
-  overflow: hidden;
+  overflow: auto;
   height: 200px;
   position: relative;
 }
@@ -24931,7 +24922,7 @@ License - nucleoapp.com/license/
 .card .avatar {
   width: 30px;
   height: 30px;
-  overflow: hidden;
+  overflow: auto;
   border-radius: 50%;
   margin-bottom: 15px;
 }
@@ -25276,7 +25267,7 @@ License - nucleoapp.com/license/
 
   .nav-open body {
     position: relative;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
 
   .nav-open .menu-on-right .main-panel {
@@ -25559,7 +25550,7 @@ License - nucleoapp.com/license/
     left: 260px;
     content: "";
     z-index: 9999;
-    overflow-x: hidden;
+    overflow-x: auto;
     background-color: transparent;
     -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -27057,7 +27048,7 @@ License - nucleoapp.com/license/
 }
 
 .dropzone .dz-preview .dz-details .dz-filename:not(:hover) {
-  overflow: hidden;
+  overflow: auto;
   text-overflow: ellipsis;
 }
 
@@ -27081,7 +27072,7 @@ License - nucleoapp.com/license/
 
 .dropzone .dz-preview .dz-image {
   border-radius: 20px;
-  overflow: hidden;
+  overflow: auto;
   width: 120px;
   height: 120px;
   position: relative;
@@ -27155,7 +27146,7 @@ License - nucleoapp.com/license/
   background: rgba(255, 255, 255, 0.9);
   -webkit-transform: scale(1);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .dropzone .dz-preview .dz-progress .dz-upload {
@@ -27247,9 +27238,6 @@ License - nucleoapp.com/license/
   border: 0;
 }
 
-.hidden {
-  display: none !important;
-}
 
 .affix {
   position: fixed;
@@ -27563,7 +27551,7 @@ body table.table-sm td {
 
 .sidebar .sidebar-wrapper,
 .off-canvas-sidebar .sidebar-wrapper {
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .dropdown-menu .dropdown-item {
@@ -27585,4 +27573,10 @@ body table.table-sm td {
 .loading .nc-icon {
   font-size: 30px;
 }
-
+body{
+  overflow: visible;
+}
+.table-responsive {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
