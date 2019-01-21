@@ -27580,3 +27580,6 @@ body{
     overflow: hidden;
     padding-bottom: 10px;
 }
+.form-control, .input-group .form-control {
+     padding: 0px 0px 0px 0px; 
+}

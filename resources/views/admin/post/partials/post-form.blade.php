@@ -137,13 +137,7 @@
         <div class="form-group has-feedback row {{ $errors->has('author') ? ' has-error ' : '' }}">
             {!! Form::label('author', trans('forms.edit-post.labels.post-author'), ['class' => 'col-12 control-label']); !!}
             <div class="col-12">
-                <select name="author" id="author" class="form-control">
-                    @foreach ($allAvailableAuthors as $availableAuthor)
-                        <option @if ($availableAuthor == $author) selected @endif value="{{ $availableAuthor }}">
-                            {{ $availableAuthor }}
-                        </option>
-                    @endforeach
-                </select>
+             {!! (Auth::user()->name) !!}
             </div>
         </div>
 
