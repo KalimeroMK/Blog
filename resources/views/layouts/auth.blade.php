@@ -10,7 +10,7 @@
 
         {{-- CSRF Token --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>@if (trim($__env->yieldContent('template_title')))@yield('template_title') | @endif {{ config('app.name', trans('titles.app')) }}</title>
+        <title>KalimeroCMS</title>
         @if (trim($__env->yieldContent('template_description')))
             <meta name="description" content="@yield('template_description')">
         @endif
