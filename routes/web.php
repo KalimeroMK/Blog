@@ -74,6 +74,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:perms.wr
 		],
 	]);
 
+    Route::get('feed', 'Admin\FeedController@index');
+
+    Route::get('menu','Admin\MenuController@index')->name('menu.get');
 	Route::get('sliders/{id}/category', 'Admin\CategoriesController@addslider')->name('admin.addcategoryslider.index');
 	Route::post('addcategorystore', 'Admin\CategoriesController@sliderstore')->name('admin.slidercategory.store');
 	Route::post('addcategorydestroy', 'Admin\CategoriesController@sliderdestroy')->name('admin.slidercategory.destroy');
@@ -103,6 +106,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission:perms.us
 //----------front end front end----------//
 
 Route::get('/', 'HomePageController@index');
+
 Route::get('/posts/{slug}', 'HomePageController@post');
 Route::get('/tags/{slug}', 'HomePageController@tags');
 
@@ -112,3 +116,4 @@ Route::feeds();
 // Contact Routes
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact', 'ContactController@contactSend')->name('contactSend');
+

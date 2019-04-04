@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-lg-10">
-        <div class="row">
+        <div class="row card">
             <div class="col-lg-offset-1 col-sm-offset-1 col-lg-10 col-sm-12 col-xs-12">
 
                 @if(Session::has('flash_message'))

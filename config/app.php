@@ -175,6 +175,11 @@ return [
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Orangehill\Iseed\IseedServiceProvider::class,
+        Spatie\Analytics\AnalyticsServiceProvider::class,
+        willvincent\Feeds\FeedsServiceProvider::class,
+
+
+
 
 
     ],
@@ -227,6 +232,11 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Carbon' => 'Carbon\Carbon',
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
+        'Feeds'    => willvincent\Feeds\Facades\FeedsFacade::class,
+
+
+
 
 
     ],

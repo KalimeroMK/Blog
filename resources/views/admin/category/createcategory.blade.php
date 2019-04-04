@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-lg-10">
-        <div class="row">
+        <div class="row card">
             <div class="col-lg-12">
                 @if($status)
                     {{ Form::model($categories, array('route' => array('admin.categories.store'), 'method' => 'POST', 'files'=>true)) }}

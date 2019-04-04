@@ -144,6 +144,161 @@
                 </p>
             </div>
         </div>
+        <div class="page-body">
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="databox databox-vertical databox-sm radius-bordered databox-shadowed">
+                        <div class="databox-top bg-orange shy text-align-left padding-left-30">
+                            <span class="databox-header"> <i class="fa fa-bar-chart-o no-margin"></i> Google Analytics {{ date('Y-m-d H:i:s') }}</span>
+                        </div>
+                        <div class="databox-bottom no-padding bg-yellow">
+                            <div class="databox-row row-1 bg-yellow shy padding-10 text-align-left">
+                                <span class="databox-number" style="font-size:20px;">Active users: <span id="realtimeusers">loading...</span></span>
+
+                            </div>
+
+                            <div class="databox-row row-1 padding-5 padding-left-5 text-align-left bordered-whitesmoke">
+                                <div class="databox-cell cell-8">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="well with-header  with-footer">
+                        <div class="header bg-blue">
+                            Statistic for week
+                        </div>
+                        <table class="table table-hover centered">
+                            <thead class="bordered-darkorange">
+                            <tr>
+                                <th>Date</th>
+                                <th>Visitors</th>
+                                <th>Page Views</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($analytics as $analytic)
+                                <tr>
+                                    <td>{{ $analytic['date']->format('D') }}</td>
+                                    <td>{{ $analytic['visitors'] }} </td>
+                                    <td>{{ $analytic['pageViews'] }} </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="well with-header  with-footer">
+                        <div class="header bg-blue">
+                            Most readed articles
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="bordered-darkorange">
+                            <tr>
+                                <th>Url</th>
+                                <th>Page Views</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($visitedpages as $visitedpage)
+                                <tr>
+                                    <td>{{ $visitedpage['url'] }}</td>
+                                    <td>{{ $visitedpage['pageViews'] }} </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="well with-header  with-footer">
+                        <div class="header bg-blue">
+                            Top Keywords for last week
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="bordered-darkorange">
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Sessions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($topkeywords as $topkeyword)
+                                <tr>
+                                    <td>{{ $topkeyword['sessions'] }} </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="well with-header  with-footer">
+                        <div class="header bg-blue">
+                            Top Referrers for last week
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="bordered-darkorange">
+                            <tr>
+                                <th>Url</th>
+                                <th>Page views</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($topreferrars as $topreferrar)
+                                <tr>
+                                    <td>{{ $topreferrar['url'] }}</td>
+                                    <td>{{ $topreferrar['pageViews'] }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="well with-header  with-footer">
+                        <div class="header bg-blue">
+                            Top Browsers for last week
+
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="bordered-darkorange">
+                            <tr>
+                                <th>Browser</th>
+                                <th>Sessions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($topbrowsers as $topbrowser)
+                                <tr>
+                                    <td>{{ $topbrowser['browser'] }}</td>
+                                    <td>{{ $topbrowser['sessions'] }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

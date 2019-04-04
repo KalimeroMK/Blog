@@ -9,7 +9,7 @@
 @section('content')
 
     <div class="col-lg-10">
-        <div class="row">
+        <div class="row card">
             <div class="col-lg-12">
                 <div class="widget">
                     <div class="widget-header bordered-bottom bordered-themesecondary">

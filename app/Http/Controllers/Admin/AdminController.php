@@ -5,12 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GenerateSitemapRequest;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Date;
+use Spatie\Analytics\Period;
 use Spatie\Sitemap\Sitemap;
 use App\Models\Settings;
 use App\Models\Sliders;
 use App\Models\Tag;
 use App\Models\User as User;
 use App\Models\Post;
+use Analytics;
+use Illuminate\Support\Facades\Session;
 
 
 class AdminController extends Controller
@@ -32,7 +36,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.home');
+        $session = Session::all();
+
+        $lastweek = new Date('7');
+        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(14));
+        $visitedpages = Analytics::fetchMostVisitedPages(Period::days(14));
+        $topkeywords = Analytics::fetchUserTypes(Period::days(14));
+        $topreferrars = Analytics::fetchTopReferrers(Period::days(14));
+        $topbrowsers = Analytics::fetchTopBrowsers(Period::days(14));
+//        $realtimeusers = Analytics::getActiveUsers();
+        $data = ['analytics' => $analyticsData,'visitedpages' => $visitedpages,'topkeywords' => $topkeywords,'topreferrars' => $topreferrars, 'topbrowsers' => $topbrowsers];
+        return view('admin.pages.home')->with($data);
     }
     public function post($slug) {
 		$tag = tag::all();

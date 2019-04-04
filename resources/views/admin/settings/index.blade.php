@@ -3,8 +3,8 @@
     {{ trans('admin.posts.pages.index.header') }}
 @endsection
 @section('content')
-    <div class="col-lg-10">
-        <div class="row">
+    <div class="col-lg-10 card">
+        <div class="row ">
             <div class="col-md-12">
 
                 @if(Session::has('flash_message'))
