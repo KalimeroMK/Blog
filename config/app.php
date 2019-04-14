@@ -177,6 +177,7 @@ return [
         Orangehill\Iseed\IseedServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         willvincent\Feeds\FeedsServiceProvider::class,
+        App\Providers\NavbarServiceProvider::class,
 
 
 

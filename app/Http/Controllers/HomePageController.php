@@ -23,9 +23,7 @@ class HomePageController extends Controller {
 		$settings = Settings::firstOrFail();
 		$post = Post::orderBy('id', 'desc')->where('is_draft', '=', '0')->paginate(27);
 		$tag = tag::all();
-		$categories = Category::roots()->get();
-		$tree = Category::getTreeHP($categories);
-		$data = ["status" => "success", "post" => $post, "categories" => $categories, "tree" => $tree, "tag" => $tag, "users" => $users, "settings" => $settings];
+		$data = ["status" => "success", "post" => $post,"tag" => $tag, "users" => $users, "settings" => $settings];
 		// dd($data);
 		return view('main.homepage')->with($data);
 	}
@@ -46,9 +44,7 @@ class HomePageController extends Controller {
 		Post::where('slug', $slug)->update(['views' => $post->views + 1]);
 		$sliders = Sliders::where('post_id', '=', $post->id)->get();
 		$allcategories = Category::get();
-		$categories = Category::roots()->get();
-		$tree = Category::getTreeHP($categories);
-		$data = ["sliders" => $sliders, "post" => $post, "tree" => $tree, "categories" => $categories, "allcategories" => $allcategories, "tag" => $tag, "settings" => $settings];
+		$data = ["sliders" => $sliders, "post" => $post, "allcategories" => $allcategories, "tag" => $tag, "settings" => $settings];
 //        dd($data);
 		return view('main.posts')->with($data);
 
@@ -58,8 +54,6 @@ class HomePageController extends Controller {
 		$settings = Settings::firstOrFail();
 
 		$allcategories = Category::get();
-		$categories = Category::roots()->get();
-		$tree = Category::getTreeHP($categories);
 		$tag = Tag::where('tag', $slug)->firstOrFail();
 		$reverse_direction = (bool) $tag->reverse_direction;
 
@@ -71,7 +65,7 @@ class HomePageController extends Controller {
 			->orderBy('published_at', $reverse_direction ? 'asc' : 'desc')
 			->paginate(10);
 
-		$data = ["post" => $post, "categories" => $categories, "tree" => $tree, "allcategories" => $allcategories, "settings" => $settings];
+		$data = ["post" => $post, "allcategories" => $allcategories, "settings" => $settings];
 
 		return view('main.tags')->with($data);
 	}
@@ -85,9 +79,7 @@ class HomePageController extends Controller {
 		if ($slug == "all") {
 			$post = Post::all();
 			$allcategories = Category::get();
-			$categories = Category::roots()->get();
-			$tree = Category::getTreeHP($categories);
-			$data = ["post" => $post, "tree" => $tree, "categories" => $categories, "allcategories" => $allcategories, "settings" => $settings];
+			$data = ["post" => $post, "allcategories" => $allcategories, "settings" => $settings];
 			return view('main.allcategories')->with($data);
 		} else {
 			$category = Category::where('slug', '=', $slug)->first();
@@ -96,9 +88,7 @@ class HomePageController extends Controller {
 		}
 
 		$allcategories = Category::get();
-		$categories = Category::roots()->get();
-		$tree = Category::getTreeHP($categories);
-		$data = ["category" => $category, "post" => $post, "tree" => $tree, "categories" => $categories, "allcategories" => $allcategories, "settings" => $settings];
+		$data = ["category" => $category, "post" => $post, "allcategories" => $allcategories, "settings" => $settings];
 		return view('main.categories')->with($data);
 	}
 
